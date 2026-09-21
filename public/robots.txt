@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://nexora-web-developer.vercel.app/sitemap.xml
