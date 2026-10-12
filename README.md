@@ -1,11 +1,13 @@
-# Nexora Website — VS Code
+# Nexora Website
 
 ## Run locally
-1. Open this folder in VS Code.
-2. Open Terminal.
-3. Run `npm install`.
-4. Run `npm run dev`.
-5. Open the local Vite URL.
+1. Run `npm install`.
+2. Run `npm run dev`.
+3. Open the local Next.js URL shown in the terminal.
+
+## Production
+- `npm run build` creates an optimized Next.js build.
+- `npm start` serves the production build.
 
 ## Included
 - Nexora navbar/logo
@@ -16,4 +18,4 @@
 - Responsive layout
 - Portfolio filters, FAQ and WhatsApp project form
 
-The navbar stray `\\n` text has been removed in this local version so you can continue editing it in VS Code.
+The site uses the Next.js App Router. Static assets are served from `public/`.

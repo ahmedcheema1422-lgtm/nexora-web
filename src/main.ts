@@ -1,9 +1,4 @@
-import './styles.css';
-
-const app = document.querySelector<HTMLDivElement>('#app');
-if (!app) throw new Error('App root not found');
-
-app.innerHTML = `
+export const siteMarkup = `
   <header class="nav">
     <a class="brand" href="#home"><img class="brand-logo" src="/resources/nexora-favicon.jpg" alt="Nexora logo"><span>NEXORA</span></a>
     <nav>
@@ -107,38 +102,3 @@ app.innerHTML = `
 
   <footer><div class="brand">NEXORA</div><p>Websites that work as hard as you do.</p><div><a href="#services">Services</a><a href="#work">Work</a><a href="#order">Start a Project</a><a href="https://wa.me/923298803509?text=Hi%20Nexora%2C%20I%20want%20a%20website." target="_blank" rel="noreferrer">WhatsApp</a></div><p class="developer-credit">Made by Cheema developer</p></footer>
 `;
-
-const hideInjectedWidgets = () => {
-  const selectors = [
-    'iframe[src*="chat" i]','iframe[src*="messenger" i]','iframe[src*="intercom" i]','iframe[src*="crisp" i]','iframe[src*="zendesk" i]','iframe[src*="tawk" i]','iframe[title*="chat" i]','[aria-label*="chat" i]','[aria-label*="live support" i]','[id*="intercom" i]','[id*="crisp" i]','[id*="tawk" i]','[id*="zendesk" i]','[id*="messenger" i]','[class*="intercom" i]','[class*="crisp" i]','[class*="tawk" i]','[class*="zendesk" i]','[class*="messenger" i]'
-  ];
-  document.querySelectorAll<HTMLElement>(selectors.join(',')).forEach(el => el.classList.add('floating-widget-hidden'));
-};
-hideInjectedWidgets();
-new MutationObserver(hideInjectedWidgets).observe(document.documentElement, { childList: true, subtree: true });
-
-document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', () => {
-    const target = document.querySelector(link.getAttribute('href') || '');
-    target?.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-document.querySelectorAll<HTMLButtonElement>('.filter-button').forEach(button => {
-  button.addEventListener('click', () => {
-    const filter = button.dataset.filter || 'all';
-    document.querySelectorAll<HTMLButtonElement>('.filter-button').forEach(item => item.classList.toggle('active', item === button));
-    document.querySelectorAll<HTMLElement>('.portfolio-card').forEach(card => card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.category !== filter));
-  });
-});
-
-const form = document.querySelector<HTMLFormElement>('#project-form');
-const status = document.querySelector<HTMLElement>('#form-status');
-form?.addEventListener('submit', event => {
-  event.preventDefault();
-  const data = new FormData(form);
-  const message = `Hi, I want a website. Name: ${data.get('name')}. Business: ${data.get('business')}. Type: ${data.get('type')}. Details: ${data.get('details')}`;
-  const url = `https://wa.me/923298803509?text=${encodeURIComponent(message)}`;
-  window.open(url, '_blank', 'noopener,noreferrer');
-  if (status) status.textContent = 'Opening WhatsApp with your project request…';
-});
