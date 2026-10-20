@@ -29,8 +29,8 @@ export const siteMarkup = `
       <div class="cards">
         <article><span class="num">01</span><h3>Business Websites</h3><p>Professional websites that make customers trust your business.</p><a href="#order">Explore →</a></article>
         <article><span class="num">02</span><h3>Online Stores</h3><p>Beautiful e-commerce stores built to turn visitors into buyers.</p><a href="#order">Explore →</a></article>
-        <article><span class="num">03</span><h3>Landing Pages</h3><p>Focused pages designed around one goal: getting results.</p><a href="#order">Explore →</a></article>
-        <article><span class="num">04</span><h3>Custom Web Apps</h3><p>Interactive tools and web apps tailored to your workflow.</p><a href="#order">Explore →</a></article>
+        <article><span class="num">03</span><h3>Landing Pages</h3><p>Focused pages designed around one goal: getting results.</p><a href="/landing-pages">Explore →</a></article>
+        <article><span class="num">04</span><h3>Custom Web Apps</h3><p>Interactive tools and web apps tailored to your workflow.</p><a href="/custom-web-apps">Explore →</a></article>
       </div>
     </section>
 
@@ -43,18 +43,25 @@ export const siteMarkup = `
         <button class="filter-button" type="button" data-filter="business">Business</button>
       </div>
       <div class="portfolio-grid">
-        <a class="project portfolio-card" data-category="restaurant" href="https://super-grill-burger.vercel.app/" target="_blank" rel="noreferrer">
-          <div class="project-visual"><img class="portfolio-site-image" src="/resources/super-grill-burger-logo.jpg" alt="Super Grill Burger logo" loading="lazy"></div>
+        <a class="project portfolio-card portfolio-card-burger" data-category="restaurant" href="https://super-grill-burger.vercel.app/" target="_blank" rel="noreferrer">
+          <div class="project-visual portfolio-visual-burger"><img class="portfolio-site-image" src="/resources/super-grill-burger-logo.jpg" alt="Super Grill Burger logo" loading="lazy"></div>
           <div class="project-info"><span>RESTAURANT WEBSITE · 2026</span><h3>Super Grill Burger</h3><p>A bold restaurant experience with menu presentation and strong ordering-focused design.</p><b>Open live site ↗</b></div>
         </a>
-        <article class="portfolio-card portfolio-placeholder" data-category="ai">
-          <div class="portfolio-art"><span>PF</span><strong>AI<br>TOOLS</strong><small>COMING NEXT</small></div>
-          <div class="project-info"><span>AI / WEB APP CONCEPT</span><h3>PixelForge AI</h3><p>A polished product direction for an AI-powered creative workflow and dashboard experience.</p><b>Portfolio preview</b></div>
-        </article>
-        <article class="portfolio-card portfolio-placeholder" data-category="business">
-          <div class="portfolio-art portfolio-business"><span>01</span><strong>BUSINESS<br>ONLINE</strong><small>CASE STUDY</small></div>
+        <a class="portfolio-card portfolio-placeholder portfolio-card-nexora" data-category="business" href="https://nexora-web-developer.vercel.app/" target="_blank" rel="noreferrer">
+          <div class="project-visual portfolio-visual-nexora"><img class="portfolio-site-image" src="/resources/nexora-logo-banner.jpeg" alt="Nexora logo" loading="lazy"></div>
+          <div class="project-info"><span>WEB DEVELOPMENT STUDIO · 2026</span><h3>Nexora</h3><p>Our studio website, showcasing the web design, development and project inquiry work we do for businesses.</p><b>Nexora studio website</b></div>
+        </a>
+        <a class="portfolio-card portfolio-placeholder portfolio-card-business" data-category="business" href="/portfolio-preview" target="_blank" rel="noreferrer">
+          <div class="project-visual portfolio-visual-business">
+            <div class="business-preview">
+              <div class="business-preview-nav"><span class="business-preview-mark">M</span><span>MODERN BUSINESS</span><b>MENU <i>+</i></b></div>
+              <div class="business-preview-copy"><span>STRATEGY · DESIGN · GROWTH</span><strong>Make your next<br>move matter.</strong><b>DISCOVER MORE <i>↗</i></b></div>
+              <div class="business-preview-orbit" aria-hidden="true"></div>
+              <div class="business-preview-foot"><span>BUILT FOR WHAT'S NEXT</span><b>01 / 03</b></div>
+            </div>
+          </div>
           <div class="project-info"><span>BUSINESS WEBSITE CONCEPT</span><h3>Modern Business</h3><p>A clean conversion-focused layout built around trust, services and clear calls to action.</p><b>Portfolio preview</b></div>
-        </article>
+        </a>
       </div>
     </section>
 
@@ -81,18 +88,19 @@ export const siteMarkup = `
     <section id="pricing" class="section pricing">
       <div class="section-head"><div><div class="eyebrow">SIMPLE PRICING</div><h2>Pick a package.<br><em>Start building.</em></h2></div><p>Every project is customized to your needs. These packages give you a clear starting point.</p></div>
       <div class="price-grid">
-        <article><span>STARTER</span><h3>Basic</h3><div class="price">From <b>PKR 15K</b></div><p>Perfect for a personal brand or small business.</p><ul><li>✓ Up to 4 pages</li><li>✓ Mobile responsive</li><li>✓ Contact / WhatsApp CTA</li><li>✓ Basic SEO setup</li></ul><a href="#order" class="button ghost">Choose Basic</a></article>
-        <article class="featured"><span>POPULAR</span><h3>Professional</h3><div class="price">From <b>PKR 30K</b></div><p>For businesses that want a stronger online presence.</p><ul><li>✓ Up to 8 pages</li><li>✓ Custom modern design</li><li>✓ Portfolio / gallery</li><li>✓ Advanced animations</li></ul><a href="#order" class="button primary">Choose Professional</a></article>
-        <article><span>ADVANCED</span><h3>Premium</h3><div class="price">Custom <b>Quote</b></div><p>For stores, web apps and advanced requirements.</p><ul><li>✓ E-commerce / custom features</li><li>✓ Admin functionality</li><li>✓ Performance optimization</li><li>✓ Priority support</li></ul><a href="#order" class="button ghost">Get a Quote</a></article>
+        <article><span>STARTER</span><h3>Basic</h3><div class="price">From <b>PKR 15K</b></div><p>Perfect for a personal brand or small business.</p><ul><li>✓ Up to 4 pages</li><li>✓ Mobile responsive</li><li>✓ Contact / WhatsApp CTA</li><li>✓ Basic SEO setup</li></ul><a href="#order" class="button ghost" data-package="Basic - From PKR 15K">Choose Basic</a></article>
+        <article class="featured"><span>POPULAR</span><h3>Professional</h3><div class="price">From <b>PKR 30K</b></div><p>For businesses that want a stronger online presence.</p><ul><li>✓ Up to 8 pages</li><li>✓ Custom modern design</li><li>✓ Portfolio / gallery</li><li>✓ Advanced animations</li></ul><a href="#order" class="button primary" data-package="Professional - From PKR 30K">Choose Professional</a></article>
+        <article><span>ADVANCED</span><h3>Premium</h3><div class="price">Custom <b>Quote</b></div><p>For stores, web apps and advanced requirements.</p><ul><li>✓ E-commerce / custom features</li><li>✓ Admin functionality</li><li>✓ Performance optimization</li><li>✓ Priority support</li></ul><a href="#order" class="button ghost" data-package="Premium - Custom Quote">Get a Quote</a></article>
       </div>
     </section>
 
     <section id="order" class="order"><div class="order-contact"><a class="button primary" href="https://wa.me/923298803509?text=Hi%20Nexora%2C%20I%20want%20a%20website." target="_blank" rel="noreferrer">Chat on WhatsApp ↗</a></div>
       <div><div class="eyebrow">LET'S WORK TOGETHER</div><h2>Have an idea?<br><em>Let's build it.</em></h2><p>Tell us what you need and we'll get back to you with the next steps.</p></div>
       <form id="project-form">
-        <label>Your name<input required name="name" placeholder="Ahmed"></label>
+        <label>Your name<input required name="name" placeholder="Enter your name"></label>
         <label>Business / project name<input required name="business" placeholder="Your Business"></label>
-        <label>What do you need?<select name="type"><option>Business Website</option><option>Online Store</option><option>Landing Page</option><option>Custom Web App</option></select></label>
+        <label>What do you need?<select required name="type"><option value="" disabled selected>Select a project type</option><option>Business Website</option><option>Online Store</option><option>Landing Page</option><option>Custom Web App</option></select></label>
+        <label>Choose a package<select required name="package"><option value="" disabled selected>Select a package</option><option value="Basic - From PKR 15K">Basic - From PKR 15K</option><option value="Professional - From PKR 30K">Professional - From PKR 30K</option><option value="Premium - Custom Quote">Premium - Custom Quote</option></select></label>
         <label>Tell us about your project<textarea required name="details" rows="4" placeholder="What should your website do?"></textarea></label>
         <button class="button primary" type="submit">Send Project Request ↗</button>
         <small id="form-status"></small>

@@ -16,6 +16,7 @@
 - Direct WhatsApp: +923298803509
 - Made by Cheema developer
 - Responsive layout
-- Portfolio filters, FAQ and WhatsApp project form
+- Portfolio filters, FAQ, WhatsApp project form, and offline Nexora chatbot
 
 The site uses the Next.js App Router. Static assets are served from `public/`.
+The chatbot uses built-in answers and does not need an API key or internet connection.
